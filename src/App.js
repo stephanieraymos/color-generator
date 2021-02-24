@@ -10,19 +10,24 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Testing");
+    let colors = new Values(color).all(10)
+    console.log(colors);
   };
 
   return (
     <>
       <section className="container">
         <h3>Color Generator</h3>
-        <form onSumbit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             value={color}
             onChange={(e) => setColor(e.target.value)}
+            placeholder="f15025"
           />
+          <button className="btn" type="submit">
+            Generate
+          </button>
         </form>
       </section>
       <section className="colors">

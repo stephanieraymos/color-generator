@@ -175,6 +175,7 @@ input {
 }
 input.error {
   border: 2px solid var(--clr-red-dark);
+  background-color: rgba(255, 0, 0, 0.233);
 }
 .colors {
   min-height: calc(100vh - 100px);
