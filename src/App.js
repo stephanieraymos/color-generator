@@ -24,7 +24,6 @@ function App() {
             onChange={(e) => setColor(e.target.value)}
           />
         </form>
-        J
       </section>
       <section className="colors">
         <h4>List of colors goes here.</h4>
