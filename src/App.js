@@ -10,8 +10,13 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let colors = new Values(color).all(10)
-    console.log(colors);
+    try {
+      let colors = new Values(color).all(10);
+      console.log(colors);
+    } catch (error) {
+      console.log(error);
+      setError(true);
+    }
   };
 
   return (
@@ -23,7 +28,7 @@ function App() {
             type="text"
             value={color}
             onChange={(e) => setColor(e.target.value)}
-            placeholder="f15025"
+            placeholder="#f15025"
           />
           <button className="btn" type="submit">
             Generate
