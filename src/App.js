@@ -13,6 +13,7 @@ function App() {
     try {
       let colors = new Values(color).all(10);
       console.log(colors);
+      setList(colors);
     } catch (error) {
       console.log(error);
       setError(true);
@@ -29,6 +30,7 @@ function App() {
             value={color}
             onChange={(e) => setColor(e.target.value)}
             placeholder="#f15025"
+            className={`${error ? "error" : null}`} //Passing in error css class if error is true
           />
           <button className="btn" type="submit">
             Generate
@@ -36,7 +38,10 @@ function App() {
         </form>
       </section>
       <section className="colors">
-        <h4>List of colors goes here.</h4>
+        {list.map((color, index) => {
+          console.log(color);
+          return <SingleColor key={index} {...colors} index={index} />;
+        })}
       </section>
     </>
   );
