@@ -167,16 +167,25 @@ input {
 @media screen and (max-width: 576px) {
   .container h3 {
     font-size: 1rem;
+    margin-right: 0;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
   }
   input,
   .btn {
     font-size: 0.85rem;
+  }
+  input{
+    width: 50%;
   }
 }
 input.error {
   border: 2px solid var(--clr-red-dark);
   background-color: rgba(255, 0, 0, 0.233);
 }
+
 .colors {
   min-height: calc(100vh - 100px);
   display: grid;

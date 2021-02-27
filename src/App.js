@@ -6,18 +6,17 @@ import Values from "values.js";
 function App() {
   const [color, setColor] = useState("");
   const [error, setError] = useState(false);
-  const [list, setList] = useState(new Values('#f15025').all(10));
+  const [list, setList] = useState(new Values("#f15025").all(10));
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
       let colors = new Values(color).all(10);
-      console.log(colors);
       setList(colors);
     } catch (error) {
-      console.log(error);
       setError(true);
-    }
+      console.log(error);
+    } 
   };
 
   return (
@@ -39,7 +38,14 @@ function App() {
       </section>
       <section className="colors">
         {list.map((color, index) => {
-          return <SingleColor key={index} {...color} index={index} hexColor={color.hex}/>;
+          return (
+            <SingleColor
+              key={index}
+              {...color}
+              index={index}
+              hexColor={color.hex}
+            />
+          );
         })}
       </section>
     </>
