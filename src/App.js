@@ -9,7 +9,7 @@ function App() {
   const [list, setList] = useState(new Values("#f15025").all(10));
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       let colors = new Values(color).all(10);
       setList(colors);
@@ -17,7 +17,7 @@ function App() {
     } catch (error) {
       setError(true);
       console.log(error);
-    } 
+    }
   };
 
   return (
@@ -26,6 +26,10 @@ function App() {
         <h3>Color Generator</h3>
         <form onSubmit={handleSubmit}>
           <input
+            data-toggle="tooltip"
+            data-placement="left"
+            title="Enter a color name, hex value or rgb value"
+            value="40"
             type="text"
             value={color}
             onChange={(e) => setColor(e.target.value)}

@@ -166,13 +166,13 @@ input {
 }
 @media screen and (max-width: 576px) {
   .container h3 {
-    font-size: 1rem;
-    margin-right: 0;
+    display: none
   }
   .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
+  
   input,
   .btn {
     font-size: 0.85rem;
